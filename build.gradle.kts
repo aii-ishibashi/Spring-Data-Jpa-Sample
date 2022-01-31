@@ -1,5 +1,4 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
 
 apply(plugin = "groovy") // groovy spockを使うのに必要
 
@@ -9,7 +8,6 @@ plugins {
 	kotlin("jvm") version "1.6.10"
 	kotlin("plugin.spring") version "1.6.10"
 	kotlin("plugin.jpa") version "1.6.10"
-	kotlin("kapt") version "1.6.10" // domaを使うのに必要
 }
 
 group = "ai.inside.aia"
@@ -31,10 +29,6 @@ dependencies {
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	runtimeOnly("com.h2database:h2")
 	implementation("org.codehaus.groovy:groovy-all:3.0.9")
-	// Doma
-	implementation("org.seasar.doma:doma-kotlin:2.51.0")
-	kapt("org.seasar.doma:doma-processor:2.51.0")
-	implementation("org.seasar.doma.boot:doma-spring-boot-starter:1.6.0")
 
 	// Testing framework
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
